@@ -5,13 +5,16 @@
 .nav-item{
     padding: 10px 20px;
 }
-a:hover, a:visited, a:link, a:active
+a:visited, a:link, a:active
 {
     text-decoration: none;
     font-size: 16px;
     font-family: "Montserrat", Helvetica, sans-serif;
     font-weight: 300;
     color: white;
+}
+a:hover{
+    color:#00838f;
 }
 
 #custom_padding_nav{

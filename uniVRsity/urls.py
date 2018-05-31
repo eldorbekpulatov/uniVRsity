@@ -21,7 +21,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', views.index, name='home'),
+    path('about', views.about, name='about'),
+    path('news', views.news, name='news'),
+    path('sponsors', views.sponsors, name='sponsors'),
+    path('contact', views.contact, name='contact'),
 ]
 
 if settings.DEBUG:
