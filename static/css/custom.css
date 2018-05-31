@@ -1,0 +1,27 @@
+#custom_nav{
+    padding: 10px 20px;
+
+}
+.nav-item{
+    padding: 10px 20px;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+#custom_padding_nav{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#logo{
+    margin-left: 4rem;
+}
+.bg-light {
+    background-color: rgba(88, 154, 143, 0.3) !important;
+}
+
