@@ -1,8 +1,18 @@
 # uniVRsity
 ##### How to Set Up:  
 1. Open Terminal in working directory.
-2. Create a virtual environment: ```virtualenv .```
-3. Activate the environment: ```source bin/actiavte``` (Mac)
-4. Install Django: ```pip install django``` (Mac)
-5. Clone: ```git clone https://github.com/eldorbekpulatov/uniVRsity.git```
-6. That's it!
+2. Create a virtual environment: ```virtualenv .``` (Mac)
+3. Go into the environment/directory. ```cd <____>``` (Mac)
+4. Activate the environment: ```source bin/actiavte``` (Mac)
+5. Install Django: ```pip install django``` (Mac)
+6. Clone: ```git clone https://github.com/eldorbekpulatov/uniVRsity.git```
+7. That's it!
+
+#### How to run the server locally:
+1. Open terminal in the cloned directory. (preferrably in Virtual Env.)
+2. Type: ```python manage.py <command>```
+3. ```<command>``` in the following order:  1. ```migrate```
+                                      2. ```makemigrations```
+                                      3. ```collectstatic```
+                                      4. ```runserver```
+4. ```<command>``` can be ```help``` to show list of all commands
