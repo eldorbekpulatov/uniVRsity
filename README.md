@@ -6,7 +6,6 @@
 4. Activate the environment: ```source bin/actiavte``` (Mac)
 5. Install Django: ```pip install django``` (Mac)
 6. Clone: ```git clone https://github.com/eldorbekpulatov/uniVRsity.git```
-7. That's it!
 
 #### How to run the server locally:
 1. Open terminal in the cloned directory. (preferrably in Virtual Env.)
