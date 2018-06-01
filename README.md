@@ -22,5 +22,5 @@
 4. ```<command>``` can be ```help``` to show list of all commands
 
 ### Some Easy Fixes
-Sometimes DB needs to be updated if something went wrong making changes.
+Sometimes DB needs to be updated if something went wrong while making changes.
 To fix: type ```python manage.py migrate --run-syncdb``` in the correct directory.
