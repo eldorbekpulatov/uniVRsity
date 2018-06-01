@@ -1,5 +1,5 @@
 # uniVRsity
-##### How to Set Up:  
+#### How to Set Up:  
 1. Open Terminal in working directory.
 2. Create a virtual environment: ```virtualenv .``` (Mac)
 3. Go into the environment/directory. ```cd <____>``` (Mac)
@@ -12,7 +12,7 @@
 2. Type: ```python manage.py runserver```
 
 
-##### How to initialize the server:
+#### How to initialize the server:
 1. Open terminal in the cloned directory. (preferrably in Virtual Env.)
 2. Type: ```python manage.py <command>```
 3. ```<command>``` in the following order:  1. ```migrate```
