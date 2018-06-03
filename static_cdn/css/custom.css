@@ -30,4 +30,12 @@ a:hover{
 
 #meettheteam{
     width: 100%;
+    text-align: right;
+    color: #fff;
+    background: url("{% static 'img/finalmtt.png' %}") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 800px;
 }
