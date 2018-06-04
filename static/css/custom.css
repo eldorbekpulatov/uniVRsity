@@ -20,6 +20,14 @@ a:hover{
     color:#00838f;
 }
 
+/* for the footer */
+.py-5 {
+    padding-bottom: 1rem!important;
+}
+.py-5 {
+    padding-top: 1rem!important;
+}
+
 #custom_padding_nav{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -40,16 +48,36 @@ a:hover{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-position: right; 
+    background-position: center; 
     background-color: rgb(234,234,234);
     min-height: 400px;
     height: 800px;
-    align-items: left;
+    align-items: center;
 }
 
 
 #jheading{
-    padding-top: 3rem;
+    padding-top: 2.5rem;
     font-size: 5rem;
     color: white;
+}
+#jbody{
+    margin-top:1rem;
+    width:250px;
+    font-weight:400;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border-left: 8px solid rgb(18, 131, 142);
+    background-color: rgba(52, 58, 64, .2);
+}
+
+#jparag{
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+}
+#button{
+    background-color: rgb(18, 131, 142) !important;
+    border-radius: 3px;
 }

@@ -40,7 +40,7 @@ a:hover{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-position: right; 
+    background-position: left; 
     background-color: rgb(234,234,234);
     min-height: 400px;
     height: 800px;
