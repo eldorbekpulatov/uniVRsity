@@ -9,6 +9,10 @@ def about(request):
     # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'about.html')
 
+def members(request):
+    # HttpResponse("Hello, world. You're at the polls index.")
+    return render(request, 'members.html')
+
 def news(request):
     # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'news.html')

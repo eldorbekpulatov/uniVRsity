@@ -26,6 +26,7 @@ urlpatterns = [
     path('news', views.news, name='news'),
     path('sponsors', views.sponsors, name='sponsors'),
     path('contact', views.contact, name='contact'),
+    path('members', views.members, name='members')
 ]
 
 if settings.DEBUG:
