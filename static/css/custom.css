@@ -83,3 +83,32 @@ a:hover{
     margin-bottom: 1rem;
 }
 
+.column{
+    margin-top: 1.5rem !important;
+}
+
+.modal-content{
+    margin-top: 4rem;
+    opacity: 0.9;
+}
+.modal-lg {
+    max-width: 1000px !important;
+}
+.modal-footer{
+    padding: 0.2rem 1rem !important;
+}
+.fa{
+    color: rgba(0, 128, 128, 0.548);
+    padding: 0rem 1rem;
+}
+.fa:hover {
+    color: rgb(18, 131, 142);
+}
+h2{
+    padding-top: 0.5rem;
+}
+
+#mem_pic{
+    width: 100%;
+    /* max-height: 155.55px; */
+}
