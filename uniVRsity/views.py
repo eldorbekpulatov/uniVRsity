@@ -1,26 +1,23 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Member
+
 
 def index(request):
-    # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'home.html')
 
 def about(request):
-    # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'about.html')
 
 def members(request):
-    # HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'members.html')
+    all_members = Member.objects.all()
+    return render(request, 'members.html', {'members': all_members})
 
 def news(request):
-    # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'news.html')
 
 def sponsors(request):
-    # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'sponsors.html')
 
 def contact(request):
-    # HttpResponse("Hello, world. You're at the polls index.")
     return render(request, 'contact.html')

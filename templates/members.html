@@ -2,343 +2,109 @@
 {% load static from staticfiles %}
 
 {% block content %}
+
+
 <div class="jumbotron">
     <div class="row" >
+        {% for member in members %}
         <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12" >
-        <div class="card">
-            <img src="{% static 'img/nick.jpg' %}" id='mem_pic'>
-            <div class="container">
-            <h2>Nicolas Barone</h2>
-            <p class="title">CEO &amp; Founder</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p><button id="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#modal01">Read More</button></p>
-            </div>
-        </div>
-        </div>
-
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+            
             <div class="card">
-                <img src="{% static 'img/nick_buitrago.jpg' %}" id='mem_pic'>
+                <img src="media/{{member.img}}" id='mem_pic'>
                 <div class="container">
-                <h2>Nicolas Buitrago</h2>
-                <p class="title">President &amp; Co-Founder</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p><button id="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#modal02">Read More</button></p>
+                <h2>{{member}}</h2>
+                <p class="title">{{member.position}}</p>
+                <p>{{member.description}}</p>
+                <p><button id="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#{{member}}">Read More</button></p>
                 </div>
             </div>
         </div>
-    
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12" >
-                <div class="card">
-                    <img src="{% static 'img/justin_kuang.jpg' %}" id='mem_pic'>
-                    <div class="container">
-                    <h2>Justin Kuang</h2>
-                    <p class="title">CFO</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p><button id="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#modal03">Read More</button></p>
+        
+
+        <!-- Modal -->
+        <div class="modal fade" id="{{member}}" role="dialog">
+            <div class="modal-dialog modal-lg" >
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-body">
+                    <div class='row'>
+                        <div class='col-lg-5 col-md-6 col-sm-6 col-xs-12'>
+                            <img src="media/{{member.img}}" alt="member_image" style="width:100%; opacity: 1 !important;">
+                            <h1 class='d-none d-sm-block d-md-none'>{{member}}</h1>
+                            <h6 class='d-none d-sm-block d-md-none'>{{member.position}}</h6>
+                            <div class="row d-none d-sm-block d-md-none">
+                                {% if not member.facebook == '' %}
+                                    <!-- Facebook -->
+                                    <a href="{{member.facebook}}"><i class="fa fa-facebook fa-lg fa-2x" style="padding: 1rem;"></i></a>
+                                {% endif %} 
+                                {% if not member.twitter == '' %}
+                                    <!-- Twitter -->
+                                    <a href="{{member.twitter}}"><i class="fa fa-twitter fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                                {% endif %}
+                                {% if not member.googlePlus == '' %}
+                                    <!-- Google +-->
+                                    <a href="{{member.googlePlus}}"><i class="fa fa-google-plus fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                                {% endif %}
+                                {% if not member.linkedIn == '' %}
+                                    <!--Linkedin -->
+                                    <a href="{{member.linkedIn}}"><i class="fa fa-linkedin fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                                {% endif %}
+                                {% if not member.instagram == '' %}
+                                    <!--Instagram-->
+                                    <a href="{{member.instagram}}"><i class="fa fa-instagram fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                                {% endif %}
+                                {% if not member.gitHub == '' %}
+                                    <!-- GitHub -->
+                                    <a href="{{member.gitHub}}"><i class="fa fa-github fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                                {% endif %}
+                                </div>
+                        </div>
+                        <div class='col-lg-7 col-md-6 col-sm-6 col-xs-12'>
+                            <h1 class='d-sm-none d-md-block'>{{member}}</h1>
+                            <h6 class='d-sm-none d-md-block'>{{member.position}}</h6>
+                            <p>{{member.bio}}</p>
+                            
+                        <div class="row d-sm-none d-md-block">
+                            {% if not member.facebook == '' %}
+                                <!-- Facebook -->
+                                <a href="{{member.facebook}}"><i class="fa fa-facebook fa-lg fa-2x" style="padding: 1rem;"></i></a>
+                            {% endif %}
+                            {% if not member.twitter == '' %}
+                                <!-- Twitter -->
+                                <a href="{{member.twitter}}"><i class="fa fa-twitter fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                            {% endif %}
+                            {% if not member.googlePlus == '' %}
+                                <!-- Google +-->
+                                <a href="{{member.googlePlus}}"><i class="fa fa-google-plus fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                            {% endif %}
+                            {% if not member.linkedIn == '' %}
+                                <!--Linkedin -->
+                                <a href="{{member.linkedIn}}"><i class="fa fa-linkedin fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                            {% endif %}
+                            {% if not member.instagram == '' %}
+                                <!--Instagram-->
+                                <a href="{{member.instagram}}"><i class="fa fa-instagram fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                            {% endif %}
+                            {% if not member.gitHub == '' %}
+                                <!-- GitHub -->
+                                <a href="{{member.gitHub}}"><i class="fa fa-github fa-lg fa-2x" style="padding: 1rem;"> </i></a>
+                            {% endif %}
+                        </div>
+                            
+                        </div>
                     </div>
                 </div>
-        </div>
-
-
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <img src="{% static 'img/eldor1.jpg' %}" id='mem_pic'>
-            <div class="container">
-            <h2>Eldor Bekpulatov</h2>
-            <p class="title">Web Developer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p><button id="button" class="btn btn-primary pull-left" data-toggle="modal" data-target="#modal04">Read More</button></p>
+                <div class="modal-footer">
+                    <button type="button" id='button' class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div> 
             </div>
         </div>
-        </div>
-    
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <img src="{% static 'img/img2.jpg' %}" id='mem_pic'>
-            <div class="container">
-            <h2>John Doe</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p><button id="button" class="btn btn-primary pull-left">Read More</button></p>
-            </div>
-        </div>
-        </div>
 
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <img src="{% static 'img/img1.jpg' %}" id='mem_pic'>
-            <div class="container">
-            <h2>John Doe</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p><button id="button" class="btn btn-primary pull-left">Read More</button></p>
-            </div>
-        </div>
-        </div>
-
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <img src="{% static 'img/francis.jpg' %}" id='mem_pic'>
-            <div class="container">
-            <h2>John Doe</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p><button id="button" class="btn btn-primary pull-left">Read More</button></p>
-            </div>
-        </div>
-        </div>
-
-        <div class="column col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <img src="{% static 'img/cloe.jpg' %}" id='mem_pic'>
-            <div class="container">
-            <h2>John Doe</h2>
-            <p class="title">Designer</p>
-            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-            <p><button id="button" class="btn btn-primary pull-left">Read More</button></p>
-            </div>
-        </div>
-        </div>
-    </div>
+        {% endfor %}
+</div>
 </div>
 
-
-
-<!-- place for member bio modals -->
-<!-- Modal -->
-<div class="modal fade" id="modal01" role="dialog">
-    <div class="modal-dialog modal-lg" >
-
-        <!-- Modal content-->
-        <div class="modal-content">
-        <div class="modal-body">
-            <div class='row'>
-                <div class='col-lg-5 col-md-6 col-sm-6 col-xs-12'>
-                    <img src="{% static 'img/nick.jpg' %}" alt="member_image" style="width:100%; opacity: 1 !important;">
-                    <h1 class='d-none d-sm-block d-md-none'>Nicolas Barone</h1>
-                    <h6 class='d-none d-sm-block d-md-none'>CEO &amp; Founder</h6>
-                    <div class="row d-none d-sm-block d-md-none">
-                            <!-- Facebook -->
-                            <a href="#"><i class="fa fa-facebook fa-lg fa-2x" style="padding: 1rem;"></i></a>
-                            <!-- Twitter -->
-                            <a href="#"><i class="fa fa-twitter fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- Google +-->
-                            <a href="#"><i class="fa fa-google-plus fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Linkedin -->
-                            <a href="#"><i class="fa fa-linkedin fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Instagram-->
-                            <a href="#"><i class="fa fa-instagram fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- GitHub -->
-                            <a href="#"><i class="fa fa-github fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                        </div>
-                </div>
-                <div class='col-lg-7 col-md-6 col-sm-6 col-xs-12'>
-                    <h1 class='d-sm-none d-md-block'>Nicolas Barone</h1>
-                    <h6 class='d-sm-none d-md-block'>CEO &amp; Founder</h6>
-                    <p>Nicolas Barone was mulling offers for this summer that included one from J.P. Morgan to work as a Technology Analyst. What stopped him from pursuing those offers was his belief in UniVRsity’s mission and potential impact. He could not have the project sit idle over the summer. Thus he declined all his offers, formed a team and immersed himself in Cornell’s entrepreneurship community. Nicolas will be graduating in three years in order to be able to fully focus on the development of UniVRsity.</p>
-                    
-                <div class="row d-sm-none d-md-block">
-                    <!-- Facebook -->
-                    <a href="#"><i class="fa fa-facebook fa-lg fa-2x"></i></a>
-                    <!-- Twitter -->
-                    <a href="#"><i class="fa fa-twitter fa-lg fa-2x"></i></a>
-                    <!-- Google +-->
-                    <a href="#"><i class="fa fa-google-plus fa-lg fa-2x"></i></a>
-                    <!--Linkedin -->
-                    <a href="#"><i class="fa fa-linkedin fa-lg fa-2x"></i></a>
-                    <!--Instagram-->
-                    <a href="#"><i class="fa fa-instagram fa-lg fa-2x"></i></a>
-                    <!-- GitHub -->
-                    <a href="#"><i class="fa fa-github fa-lg fa-2x"></i></a>
-                </div>
-                    
-                </div>
-            </div>
-        </div>
-            <div class="modal-footer">
-                <button type="button" id='button' class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-        
-    </div>
-</div>
-
-    
-<!-- Modal -->
-<div class="modal fade" id="modal02" role="dialog">
-    <div class="modal-dialog modal-lg" >
-
-        <!-- Modal content-->
-        <div class="modal-content">
-        <div class="modal-body">
-            <div class='row'>
-                <div class='col-lg-5 col-md-6 col-sm-6 col-xs-12'>
-                    <img src="{% static 'img/nick_buitrago.jpg' %}" alt="member_image" style="width:100%; opacity: 1 !important;">
-                    <h1 class='d-none d-sm-block d-md-none'>Nicolas Buitrago</h1>
-                    <h6 class='d-none d-sm-block d-md-none'>President &amp; Co-Founder </h6>
-                    <div class="row d-none d-sm-block d-md-none">
-                            <!-- Facebook -->
-                            <a href="#"><i class="fa fa-facebook fa-lg fa-2x" style="padding: 1rem;"></i></a>
-                            <!-- Twitter -->
-                            <a href="#"><i class="fa fa-twitter fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- Google +-->
-                            <a href="#"><i class="fa fa-google-plus fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Linkedin -->
-                            <a href="#"><i class="fa fa-linkedin fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Instagram-->
-                            <a href="#"><i class="fa fa-instagram fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- GitHub -->
-                            <a href="#"><i class="fa fa-github fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                        </div>
-                </div>
-                <div class='col-lg-7 col-md-6 col-sm-6 col-xs-12'>
-                    <h1 class='d-sm-none d-md-block'>Nicolas Buitrago</h1>
-                    <h6 class='d-sm-none d-md-block'>President &amp; Co-Founder</h6>
-                    <p>Nicolas Buitrago is a Colombian immigrant born to manufacturing workers on track to retire at the age of 75.  Grateful for the risks and struggles his parents endured, Nicolas works hard to bring about a better life for them. Taking what he has learned from his experiences, Nicolas best represents the values of the company. Nicolas has attained Dean’s List every semester and is the vision team lead of Cornell’s premier robotics team, Cornell Cup Robotics.</p>
-                    
-                <div class="row d-sm-none d-md-block">
-                    <!-- Facebook -->
-                    <a href="#"><i class="fa fa-facebook fa-lg fa-2x"></i></a>
-                    <!-- Twitter -->
-                    <a href="#"><i class="fa fa-twitter fa-lg fa-2x"></i></a>
-                    <!-- Google +-->
-                    <a href="#"><i class="fa fa-google-plus fa-lg fa-2x"></i></a>
-                    <!--Linkedin -->
-                    <a href="#"><i class="fa fa-linkedin fa-lg fa-2x"></i></a>
-                    <!--Instagram-->
-                    <a href="#"><i class="fa fa-instagram fa-lg fa-2x"></i></a>
-                    <!-- GitHub -->
-                    <a href="#"><i class="fa fa-github fa-lg fa-2x"></i></a>
-                </div>
-                    
-                </div>
-            </div>
-        </div>
-            <div class="modal-footer">
-                <button type="button" id='button' class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-        
-    </div>
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="modal03" role="dialog">
-    <div class="modal-dialog modal-lg" >
-
-        <!-- Modal content-->
-        <div class="modal-content">
-        <div class="modal-body">
-            <div class='row'>
-                <div class='col-lg-5 col-md-6 col-sm-6 col-xs-12'>
-                    <img src="{% static 'img/justin_kuang.jpg' %}" alt="member_image" style="width:100%; opacity: 1 !important;">
-                    <h1 class='d-none d-sm-block d-md-none'>Justin Kuang</h1>
-                    <h6 class='d-none d-sm-block d-md-none'>CFO</h6>
-                    <div class="row d-none d-sm-block d-md-none">
-                            <!-- Facebook -->
-                            <a href="#"><i class="fa fa-facebook fa-lg fa-2x" style="padding: 1rem;"></i></a>
-                            <!-- Twitter -->
-                            <a href="#"><i class="fa fa-twitter fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- Google +-->
-                            <a href="#"><i class="fa fa-google-plus fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Linkedin -->
-                            <a href="#"><i class="fa fa-linkedin fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Instagram-->
-                            <a href="#"><i class="fa fa-instagram fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- GitHub -->
-                            <a href="#"><i class="fa fa-github fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                        </div>
-                </div>
-                <div class='col-lg-7 col-md-6 col-sm-6 col-xs-12'>
-                    <h1 class='d-sm-none d-md-block'>Justin Kuang</h1>
-                    <h6 class='d-sm-none d-md-block'>CFO</h6>
-                    <p>Justin Kuang is a junior studying Computer Science. He hopes to apply his experience running BigRed//Hacks over the past two years to help UniVRsity grow.</p>
-                    
-                <div class="row d-sm-none d-md-block">
-                    <!-- Facebook -->
-                    <a href="#"><i class="fa fa-facebook fa-lg fa-2x"></i></a>
-                    <!-- Twitter -->
-                    <a href="#"><i class="fa fa-twitter fa-lg fa-2x"></i></a>
-                    <!-- Google +-->
-                    <a href="#"><i class="fa fa-google-plus fa-lg fa-2x"></i></a>
-                    <!--Linkedin -->
-                    <a href="#"><i class="fa fa-linkedin fa-lg fa-2x"></i></a>
-                    <!--Instagram-->
-                    <a href="#"><i class="fa fa-instagram fa-lg fa-2x"></i></a>
-                    <!-- GitHub -->
-                    <a href="#"><i class="fa fa-github fa-lg fa-2x"></i></a>
-                </div>
-                    
-                </div>
-            </div>
-        </div>
-            <div class="modal-footer">
-                <button type="button" id='button' class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-        
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modal04" role="dialog">
-    <div class="modal-dialog modal-lg" >
-
-        <!-- Modal content-->
-        <div class="modal-content">
-        <div class="modal-body">
-            <div class='row'>
-                <div class='col-lg-5 col-md-6 col-sm-6 col-xs-12'>
-                    <img src="{% static 'img/eldor1.jpg' %}" alt="member_image" style="width:100%; opacity: 1 !important;">
-                    <h1 class='d-none d-sm-block d-md-none'>Eldor Bekpulatov</h1>
-                    <h6 class='d-none d-sm-block d-md-none'>Web Developer</h6>
-                    <div class="row d-none d-sm-block d-md-none">
-                            <!-- Facebook -->
-                            <a href="#"><i class="fa fa-facebook fa-lg fa-2x" style="padding: 1rem;"></i></a>
-                            <!-- Twitter -->
-                            <a href="#"><i class="fa fa-twitter fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- Google +-->
-                            <a href="#"><i class="fa fa-google-plus fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Linkedin -->
-                            <a href="#"><i class="fa fa-linkedin fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!--Instagram-->
-                            <a href="#"><i class="fa fa-instagram fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                            <!-- GitHub -->
-                            <a href="#"><i class="fa fa-github fa-lg fa-2x" style="padding: 1rem;"> </i></a>
-                        </div>
-                </div>
-                <div class='col-lg-7 col-md-6 col-sm-6 col-xs-12'>
-                    <h1 class='d-sm-none d-md-block'>Eldor Bekpulatov</h1>
-                    <h6 class='d-sm-none d-md-block'>Web Developer</h6>
-                    <p>Eldor is a rising junior in College of Engineering studying ECE, while minoring in Business. He is a Research Adviser for the AguaClara Apps & Algorithms team. Some of his interests are Web Development, Machine Learning, Database Management, and Signal Processing.</p>
-                    
-                <div class="row d-sm-none d-md-block">
-                    <!-- Facebook -->
-                    <a href="#"><i class="fa fa-facebook fa-lg fa-2x"></i></a>
-                    <!-- Twitter -->
-                    <a href="#"><i class="fa fa-twitter fa-lg fa-2x"></i></a>
-                    <!-- Google +-->
-                    <a href="#"><i class="fa fa-google-plus fa-lg fa-2x"></i></a>
-                    <!--Linkedin -->
-                    <a href="#"><i class="fa fa-linkedin fa-lg fa-2x"></i></a>
-                    <!--Instagram-->
-                    <a href="#"><i class="fa fa-instagram fa-lg fa-2x"></i></a>
-                    <!-- GitHub -->
-                    <a href="#"><i class="fa fa-github fa-lg fa-2x"></i></a>
-                </div>
-                    
-                </div>
-            </div>
-        </div>
-            <div class="modal-footer">
-                <button type="button" id='button' class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-        
-    </div>
-</div>
 
 {% endblock %}
