@@ -25,8 +25,22 @@ SECRET_KEY = '^@jnot4_s&itd&jr6(c2j0%1d8n59397!ahh!gc#4+svtygpzn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['univrsity.herokuapp.com', '127.0.0.1']
 
+# Database
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Application definition
 
@@ -71,15 +85,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'uniVRsity.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
