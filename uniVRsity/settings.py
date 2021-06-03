@@ -25,7 +25,7 @@ SECRET_KEY = '^@jnot4_s&itd&jr6(c2j0%1d8n59397!ahh!gc#4+svtygpzn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['univrsity.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['template-this-bitch.herokuapp.com', '127.0.0.1']
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
